@@ -38,6 +38,7 @@ class _GitHubSignInPageState extends State<GitHubSignInPage> {
         ),
         body: WebView(
           initialUrl: widget.url,
+          javascriptMode: JavascriptMode.unrestricted,
           userAgent: widget.userAgent ?? _userAgentMacOSX,
           onPageFinished: (url) {
             if (url.startsWith(widget.redirectUrl)) {
